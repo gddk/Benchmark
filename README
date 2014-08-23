@@ -22,4 +22,4 @@ wget -N https://raw.github.com/gddk/Benchmark/master/sb.sh&&bash sb.sh 'host_nam
 
 Example:
 
-wget -N https://raw.github.com/Crowd9/Benchmark/master/sb.sh&&bash sb.sh 'LN' 'LN 512' 'storecrowd@mailinator.com' '19.99' private
+wget -N https://raw.github.com/gddk/Benchmark/master/sb.sh&&bash sb.sh 'LN' 'LN 512' 'storecrowd@mailinator.com' '19.99' private
