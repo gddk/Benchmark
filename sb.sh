@@ -253,13 +253,13 @@ cd $UNIX_BENCH_DIR
 ./Run -c 1 -c `grep -c processor /proc/cpuinfo` >> ../sb-output.log 2>&1
 cd ..
 
-echo "Not uploading results, see upload[upload_type]=unix-bench-output and sb-output.log"
-# RESPONSE=\`curl -s -F "upload[upload_type]=unix-bench-output" -F "upload[data]=<sb-output.log" -F "upload[key]=$EMAIL|$HOST|$PLAN|$COST" -F "private=$PRIVATE" $UPLOAD_ENDPOINT\`
+echo "Uploading results..."
+RESPONSE=\`curl -s -F "upload[upload_type]=unix-bench-output" -F "upload[data]=<sb-output.log" -F "upload[key]=$EMAIL|$HOST|$PLAN|$COST" -F "private=$PRIVATE" $UPLOAD_ENDPOINT\`
 
-echo "Not Uploading results..."
-#echo "Response: \$RESPONSE"
+echo "Response: \$RESPONSE"
 #echo "Completed! Your benchmark has been queued & will be delivered in a jiffy."
 kill -15 \`ps -p \$\$ -o ppid=\` &> /dev/null
+echo "Remember to 'rm -rf ../sb-bench' before running again"
 #rm -rf ../sb-bench
 rm -rf ~/.sb-pid
 
